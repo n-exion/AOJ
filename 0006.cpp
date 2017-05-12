@@ -20,28 +20,20 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	long a, b;
-	while(scanf("%ld %ld", &a, &b) != EOF)
+	char buf[21];
+	char ans[21];
+	scanf("%s", buf);
+	int i = 0;
+	for (;i < 21; i++)
 	{
-		long x,y;
-		if (a > b)
-		{
-			x = a;
-			y = b;
-		}
-		else
-		{
-			x = b;
-			y = a;
-		}
-		while(x != y)
-		{
-			long tmp = x - y;
-			x = tmp > y ? tmp : y;
-			y = tmp > y ? y : tmp;
-		}
-		long l = a/x * b;
-		printf("%ld %ld\n", x, l);
+		if (buf[i] == '\0') break;
 	}
+	i--;
+	for (int j = 0; j <= i; j++)
+	{
+		ans[j] = buf[i-j];
+	}
+	ans[i+1] = '\0';
+	printf("%s\n", ans);
 	return 0;
 }
