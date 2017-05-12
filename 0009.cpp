@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 	memset(mem, 0, 1000000);
 	for (int i = 2; i < loop_max; i++)
 	{
-		int c = i * 2;
+		int c = i * i;
 		while(c < max_num)
 		{
 			mem[c] = 1;
